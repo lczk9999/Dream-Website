@@ -1,36 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dream Website</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-        <div class="col-1">
-            <div class="bloco">
-                <h3>Calendar</h3>
-                <div id="mostrar-calendario"></div>
-            </div>
+    <title>Dream Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-            <div class="bloco">
-                <h3>Cronômetro</h3>
-                <div id="tempo" style="font-size: 20px;">00:00:00</div>
-                <button onclick="iniciar()">Iniciar</button>
-                <button onclick="parar()">Parar</button>
-                <button onclick="limapar()">Limpar</button>
-            </div>
+    <div class="col-1">
+        <div class="bloco">
+            <h3>Calendar</h3>
+            <div id="mostrar-calendario"></div>
         </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                document.querySelectorAll('input, textarea').forEach((field) => {
-                    field.setAttribute('autocomplete', 'off');
-                    field.setAttribute('autocorrect', 'off');
-                    field.setAttribute('autocapitalize', 'off');
-                    field.setAttribute('spellcheck', 'false');
-                });
-            });
-        </script>
-    </body>
+        <div class="bloco">
+            <h3>Cronômetro</h3>
+            <div id="tempo" style="font-size: 20px;">00:00:00</div>
+            <button onclick="iniciar()">Iniciar</button>
+            <button onclick="parar()">Parar</button>
+            <button onclick="limpar()">Lipar</button>
+        </div>
+
+        <div class="bloco">
+            <h3>Pintar</h3>
+            <canvas id="quadro-pintura" width="200" height="150" style="background: white; border: 1px solid #0066ff; cursor: crosshair; display: block; margin: 0 auto 5px auto;"></canvas>
+            <button onclick="limparQuadro()">Limpar Desenho</button>
+        </div>
+    </div>
+
+    <div class="col-2">
+        <h1 class="titulo">Dream Website</h1>
+        
+        <div>
+            <input type="text" id="campo-busca" placeholder="Digite para buscar..." oninput="verificarBusca()">
+            <button onclick="showSearchLinks()">Share</button>
+            
+            <div id="div-links" style="display: none; margin-top: 10px;">
+                <a href="https://google.com" target="_blank" style="color: #0066ff; display: block;">Google</a>
+                <a href="https://youtube.com" target="_blank" style="color: #0066ff; display: block;">YouTube</a>
+                <a href="https://github.com" target="_blank" style="color: #0066ff; display: block;">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-3">
+        <div class="bloco">
+            <h3>Notas</h3>
+            <textarea id="texto-notas" style="width: 85%; height: 70px;"></textarea>
+            <button onclick="salvarNotas()">Salvar</button>
+        </div>
+
+        <div class="bloco">
+            <h3>Mini Game</h3>
+            <button onclick="alternarJogo()">Iniciar / Fechar Jogo</button>
+            <div id="tela-do-jogo">
+                <div id="pontos" style="color: #0066ff; font-size: 11px;">Score: 0</div>
+                <div id="boneco"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nuvens-container">
+        <div class="circulo-nuvem c1"></div>
+        <div class="circulo-nuvem c2"></div>
+        <div class="circulo-nuvem c3"></div>
+        <div class="circulo-nuvem c4"></div>
+        <div class="circulo-nuvem c5"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>

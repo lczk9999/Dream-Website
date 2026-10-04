@@ -24,22 +24,27 @@ body {
     padding: 12px;
     margin-bottom: 20px;
     border-radius: 6px;
+    width: 90%;
+    box-sizing: border-box;
 }
 
 .col-1 {
     float: left;
     width: 23%;
+    position: relative;
 }
 
 .col-2 {
     float: left;
     width: 50%;
     text-align: center;
+    position: relative;
 }
 
 .col-3 {
     float: left;
     width: 23%;
+    position: relative;
 }
 
 button {
@@ -96,6 +101,7 @@ button {
 .bloco h3 {
     color: #0066ff;
     margin-top: 0;
+    cursor: move;
 }
 
 .nuvens-container {
